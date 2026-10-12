@@ -5,5 +5,25 @@
     },
     "data-root": "/mnt/data/docker",
     "bip": "172.30.232.1/23",
-    "ipv6": true
+    "ipv6": true,
+    "registry-mirrors": [
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com",
+        "https://docker.1ms.run",
+        "https://dockerproxy.net",
+        "https://proxy.vvvv.ee",
+        "https://dockerproxy.link",
+        "https://hub.rat.dev",
+        "https://mirror.aliyuncs.com",
+        "https://swr.cn-north-4.myhuaweicloud.com",
+        "https://do.nark.eu.org",
+        "https://dc.j8.work",
+        "https://docker.m.daocloud.io",
+        "https://dockerproxy.com",
+        "https://docker.nju.edu.cn",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://docker.xuanyuan.me",
+        "https://docker.mszx.com",
+        "https://ghcr.nju.edu.cn"
+    ]
 }

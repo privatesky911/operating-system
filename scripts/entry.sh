@@ -1,7 +1,28 @@
 #!/bin/bash
 set -e
 
+# Configure Go proxy for China network
+export GOPROXY="https://goproxy.cn,direct"
+echo "GOPROXY=https://goproxy.cn,direct" >> /etc/environment
+
 USER="root"
+
+# Configure Docker registry mirrors for the inner dockerd
+mkdir -p /etc/docker
+cat > /etc/docker/daemon.json <<'DAEMONJSON'
+{
+    "registry-mirrors": [
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com",
+        "https://docker.1ms.run",
+        "https://dockerproxy.net",
+        "https://mirror.aliyuncs.com",
+        "https://docker.m.daocloud.io",
+        "https://docker.nju.edu.cn",
+        "https://docker.mirrors.ustc.edu.cn"
+    ]
+}
+DAEMONJSON
 
 # Run dockerd
 dockerd -s vfs &> /dev/null &

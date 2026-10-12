@@ -10,3 +10,6 @@ output*/
 
 # vscode generated files
 .vscode*
+
+# sm3566a kernel source tree (3.8G, keep out of git)
+sm3566a_kernel/

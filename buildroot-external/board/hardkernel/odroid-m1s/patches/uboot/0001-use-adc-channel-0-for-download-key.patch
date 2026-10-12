@@ -1,0 +1,22 @@
+--- a/arch/arm/mach-rockchip/boot_mode.c
++++ b/arch/arm/mach-rockchip/boot_mode.c
+@@ -52,7 +52,7 @@
+ 	ret = -ENODEV;
+ 	uclass_foreach_dev(dev, uc) {
+ 		if (!strncmp(dev->name, "saradc", 6)) {
+-			ret = adc_channel_single_shot(dev->name, 1, &val);
++			ret = adc_channel_single_shot(dev->name, 0, &val);
+ 			break;
+ 		}
+ 	}
+@@ -77,9 +77,8 @@
+ void rockchip_dnl_mode_check(void)
+ {
+ 	if (rockchip_dnl_key_pressed()) {
+-		printf("download key pressed, entering download mode...");
+-		set_back_to_bootrom_dnl_flag();
+-		do_reset(NULL, 0, 0, NULL);
++		printf("download key pressed, entering rockusb mode...\n");
++		run_command("rockusb 0 mmc 0", 0);
+ 	}
+ }
