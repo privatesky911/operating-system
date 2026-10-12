@@ -1,4 +1,4 @@
 [submodule "buildroot"]
 	path = buildroot
-	url = https://github.com/privatesky911/buildroot
-	branch = 2024.02.x-haos
+	url = git@github.com:privatesky911/buildroot.git
+	branch = ha3566a
