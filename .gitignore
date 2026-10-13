@@ -13,3 +13,5 @@ output*/
 
 # sm3566a kernel source tree (3.8G, keep out of git)
 sm3566a_kernel/
+HANDOFF.md
+
